@@ -47,7 +47,10 @@ int main() {
 
             for (size_t i = 1; i < parts2.size(); i++) {
                 string param = parts2[i];
-                param.erase(remove_if(param.begin(), param.end(), [](char c) { return c == '&' || c == ','; }), param.end());
+                
+                // Remove '&' and ',' from param manually
+                param.erase(remove(param.begin(), param.end(), '&'), param.end());
+                param.erase(remove(param.begin(), param.end(), ','), param.end());
 
                 if (param.find('=') != string::npos) {
                     kp++;
@@ -80,7 +83,11 @@ int main() {
             for (const auto &part : parts) {
                 if (part.find('&') != string::npos) {
                     string param = part;
-                    param.erase(remove_if(param.begin(), param.end(), [](char c) { return c == '&' || c == ','; }), param.end());
+
+                    // Remove '&' and ',' from param manually
+                    param.erase(remove(param.begin(), param.end(), '&'), param.end());
+                    param.erase(remove(param.begin(), param.end(), ','), param.end());
+
                     if (pntab.find(param) != pntab.end()) {
                         mdt << "(P," << pntab[param] << ")\t";
                     }
