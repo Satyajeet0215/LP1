@@ -114,7 +114,7 @@ void Memory::worstfit() {
     for (const auto &it : mp) {
         cout << it.first << setw(20) << blocks[it.first] << setw(20) << it.second << endl;
     }
-}
+}     
 
 void Memory::nextfit() {
     for (int i = 0; i < bsize; i++) {

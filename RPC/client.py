@@ -13,6 +13,6 @@ result_subtract = client.subtract(x, y)
 result_multiply = client.multiply(x, y)
 
 # Print Result of remote fucntions
-print(f"{x} + {y} = {result_add}")
+print("addition is", result_add)
 print(f"{x} - {y} = {result_subtract}")
 print(f"{x} * {y} = {result_multiply}")
